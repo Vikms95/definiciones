@@ -17,7 +17,7 @@ def load_spanish_blacklist(file_name='spanish_blacklist.csv'):
         return []
 
 def append_problematic_words_to_blacklist(file_name='spanish_blacklist.csv'):
-    with open(file_name, 'a', newline='') as file:  # 'a' mode for appending to the file
+    with open(file_name, 'a', newline='') as file:
         writer = csv.writer(file)
         for word in spanish_blacklist:
             writer.writerow([word]) 

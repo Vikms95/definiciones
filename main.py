@@ -2,10 +2,10 @@ from db_to_dict import db_to_dict
 from anki_service import anki_request, get_request_dict
 from keyboard import add_with_keyboard
 from get_spanish_definition import query_all_spanish_definitions
-from blacklist import load_spanish_blacklist,spanish_blacklist
+from blacklist import load_spanish_blacklist
 
 def main():
-    # kindle needs to be connected to the laptop
+    # kindle needs to be connected to the pc and kindle client has to be open
     kindle_words = db_to_dict()
     load_spanish_blacklist()
     anki_ids = anki_request('findCards', **{"query":"deck:spanish"})
@@ -24,5 +24,5 @@ main()
 
 
 # TODO: join usage columns
-# TODO: better way to add?
+# TODO: better way to add cards? (pr to anki_connect)
 # TODO: add english words to different deck
