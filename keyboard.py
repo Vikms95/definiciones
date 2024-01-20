@@ -12,4 +12,6 @@ def add_with_keyboard():
             time.sleep(0.1)
             keyboard.tap(Key.tab)
         keyboard.tap(Key.enter)
+        time.sleep(0.1)
+        keyboard.tap(Key.esc)
     time.sleep(1)

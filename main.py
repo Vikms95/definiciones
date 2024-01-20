@@ -12,14 +12,15 @@ def main():
     anki_words_info = anki_request('cardsInfo', **{"cards": anki_ids})
     anki_words = [word['fields']['Word']['value'] for word in anki_words_info]
     for [kindle_word] in kindle_words:
-        if(kindle_word not in anki_words):
+        if(kindle_word not in anki_words and len(kindle_word) > 1):
             # 1.
             word_dict = get_spanish_definition(kindle_word)
-            # 
-            print(word_dict )
-            # request_dic = get_request_dict(**word_dict)
-            # anki_request('guiAddCards', **request_dic)
-            # add_with_keyboard()
+            print(word_dict)
+            if word_dict == None: continue
+            
+            request_dic = get_request_dict(**word_dict)
+            anki_request('guiAddCards', **request_dic)
+            add_with_keyboard()
 main()
 
 
