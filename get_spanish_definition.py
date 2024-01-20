@@ -30,16 +30,6 @@ def query_all_spanish_definitions(kindle_words, existing_anki_words):
 def is_new_valid_word(kindle_word, existing_anki_words):
     return kindle_word not in existing_anki_words and kindle_word not in spanish_blacklist and len(kindle_word) > 1
 
-async def get_and_filter_spanish_definition(word: str):
-    result = await get_spanish_definition(word)
-    
-    print('hello world')
-    if result is not None:
-        return result
-    else:
-        spanish_blacklist.append(word)
-        
-
 
 def get_spanish_definition(word: str):
     try:
