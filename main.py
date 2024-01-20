@@ -12,13 +12,11 @@ def main():
     anki_words_info = anki_request('cardsInfo', **{"cards": anki_ids})
     existing_anki_words = [word['fields']['Word']['value'] for word in anki_words_info]
     words_dict = query_all_spanish_definitions(kindle_words, existing_anki_words)
-    print(words_dict)
-    print(spanish_blacklist)
-    # for dict_idx in words_dict:
-    #     if dict_idx is not None:
-    #         request_dic = get_request_dict(**dict_idx)
-    #         anki_request('guiAddCards', **request_dic)
-    #         add_with_keyboard()
+    for dict_idx in words_dict:
+        if dict_idx is not None:
+            request_dic = get_request_dict(**dict_idx)
+            anki_request('guiAddCards', **request_dic)
+            add_with_keyboard()
 main()
 
 
