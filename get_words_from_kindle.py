@@ -1,8 +1,8 @@
 import sqlite3
-# cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
+
 path = '/media/vikms/Kindle/system/vocabulary/vocab.db'
 
-def db_to_dict():
+def get_words_from_kindle():
     conn = sqlite3.connect(path)
     cursor = conn.cursor()
 

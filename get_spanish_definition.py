@@ -1,7 +1,6 @@
 from pyrae import dle
 from blacklist import spanish_blacklist, append_problematic_words_to_blacklist
-from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor, as_completed
-
+from concurrent.futures import ProcessPoolExecutor, as_completed
 
 def query_all_spanish_definitions(kindle_words, existing_anki_words):
     valid_words_info = [
